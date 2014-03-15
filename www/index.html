@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+        <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <script src="jquery/jquery-1.11.0.min.js"></script>
+        <link rel="stylesheet" href="jquery/jquery.mobile-1.4.2.min.css" />
+        <script src="jquery/jquery.mobile-1.4.2.min.js"></script>
+        <script>
+            // Wait for device API libraries to load
+            //
+            function onLoad() {
+                document.addEventListener("deviceready", onDeviceReady, false);
+            }
+        function onDeviceReady() {
+            // Now safe to use device APIs
+            init();
+            //alert("Alert deviceready");
+            console.log(" console deviceready");
+        }
+
+
+        </script>
+        <title>OEE</title>
+        </head>
+
+        <body onload="onLoad()">
+<!-- ************* newOeeLogPage ************* -->
+<div data-role="page" data-rel="dialog" id="newOeeLogPage" data-theme="a" data-close-btn="none">
+          <div data-role="header" data-theme="a" class="ui-corner-top">
+    <h1>New OEE Log</h1>
+  </div>
+          <div data-role="content" data-theme="a" class="ui-corner-bottom ui-content">
+    <div data-role='fieldcontain'>
+              <label for='equipmentInput'>Equipment:<span id="err1" style="color:#990033; display:none"> !Required</span></label>
+              <input type='text' id='equipmentInput' name='equipmentInput'/>
+            </div>
+    <div data-role='fieldcontain'>
+              <label for='shiftInput'>Shift:<span id="err2" style="color:#990033; display:none"> !Required</span></label>
+              <input type='text' id='shiftInput' name='shiftInput'/>
+            </div>
+    <div data-role='fieldcontain'>
+              <label for='prdLeadInput'>Production Lead:<span id="err3" style="color:#990033; display:none"> !Required</span></label>
+              <input type='text' id='prdLeadInput' name='prdLeadInput'/>
+            </div>
+    <div data-role='fieldcontain'>
+              <label for='prdDateInput'>Production Date:<span id="err4" style="color:#990033; display:none"> !Required</span></label>
+              <input type='date' data-clear-btn='false' name='prdDateInput' id='prdDateInput' value=''/>
+            </div>
+    <div data-role='fieldcontain'>
+              <label for='lbl'><span id="err5" style="color:#990033; display:none"> !Required</span></label>
+              <fieldset class="ui-grid-solo ui-responsive buttonSet" id='lbl'>
+        <div class="ui-block-a">
+                  <input type="button" id="nextBtn" value="Next"/>
+                </div>
+      </fieldset>
+            </div>
+    <div id='spError'></div>
+  </div>
+          <!-- /content --> 
+          
+        </div>
+<!-- /page --> 
+
+<!-- ************* oeeTargetPage ************* -->
+<div data-role="page" data-rel="dialog" id="oeeTargetPage" data-theme="a" data-close-btn="none">
+          <div data-role="header" data-theme="a" class="ui-corner-top">
+    <h1>OEE Target</h1>
+  </div>
+          <div data-role="content" data-theme="a" class="ui-corner-bottom ui-content">
+    <div id="oeeTargetCalc"></div>
+    <div data-role='fieldcontain'>
+              <label for='availTargetInput'>Availability:<span id="err4" style="color:#990033; display:none"> !Required</span></label>
+              <input type='number' id='availTargetInput' name='availTargetInput'/>
+            </div>
+    <div data-role='fieldcontain'>
+              <label for='perfTargetInput'>Performance:<span id="err4" style="color:#990033; display:none"> !Required</span></label>
+              <input type='number' id='perfTargetInput' name='perfTargetInput'/>
+            </div>
+    <div data-role='fieldcontain'>
+              <label for='qualTargetInput'>Quality:<span id="err4" style="color:#990033; display:none"> !Required</span></label>
+              <input type='number' id='qualTargetInput' name='qualTargetInput'/>
+            </div>
+    <fieldset class="ui-grid-a ui-responsive buttonSet">
+              <div class="ui-block-a">
+        <input type="button" id="cancelOeeTargetBtn" value="Cancel"/>
+      </div>
+              <div class="ui-block-b">
+        <input type="button" id="saveOeeTargetBtn" value="Save"/>
+      </div>
+            </fieldset>
+    <div id='spError'></div>
+  </div>
+          <!-- /content --> 
+        </div>
+<!-- /page --> 
+
+<!-- *************oeeFormPage************* -->
+<div data-role="page" data-rel="dialog" id="oeeFormPage" data-theme="a" data-close-btn="none">
+          <div data-role="header" data-theme="a" class="ui-corner-top">
+    <h1>OEE Log Details</h1>
+  </div>
+          <div data-role="content" data-theme="a" class="ui-corner-bottom ui-content">
+    <input id='seletedId'  type='hidden' value=''/>
+    <div data-role='fieldcontain'>
+              <label for='typeOeeformSelect'>Type:<span id="errOeeForm1" style="color:#990033; display:none"> !Required</span></label>
+              <select id="typeOeeformSelect">
+        <option value="Operating Time">Operating Time</option>
+        <option value="Plan Downtime">Plan Downtime</option>
+      </select>
+            </div>
+    <div data-role='fieldcontain'>
+              <label for='startTimeOeeFormLog'>Start Time:<span id="errOeeForm2" style="color:#990033; display:none"> !Required</span></label>
+              <input type="time" data-clear-btn="false" name="startTimeOeeFormLog" id="startTimeOeeFormLog" value=""/>
+            </div>
+    <div data-role='fieldcontain'>
+              <label for='endTimeOeeFormLog'>End Time:<span id="errOeeForm3" style="color:#990033; display:none"> !Required</span></label>
+              <input type="time" data-clear-btn="false" name="endTimeOeeFormLog" id="endTimeOeeFormLog" value=""/>
+            </div>
+    <div class="hideshow">
+              <div data-role='fieldcontain'>
+        <label for='targetRateOeeFormInput'>Target Rate:<span id="errOeeForm4" style="color:#990033; display:none"> !Required</span></label>
+        <input id='targetRateOeeFormInput'  type='number' min='0' value='' placeholder="Pieces per Minute"/>
+      </div>
+              <div data-role='fieldcontain'>
+        <label for='actualQtyOeeFormInput'>Quantity Completed:<span id="errOeeForm5" style="color:#990033; display:none"> !Required</span></label>
+        <input id='actualQtyOeeFormInput'  type='number' min='0' value='' placeholder="Pieces"/>
+      </div>
+              <div data-role='fieldcontain'>
+        <label for='itemNumOeeFormInput'>Item#:<span id="errOeeForm6" style="color:#990033; display:none"> !Required</span></label>
+        <input id='itemNumOeeFormInput'  type='text' value=''/>
+      </div>
+              <form>
+        <label>
+                  <input type="checkbox" id="addDtCheckbox"/>
+                  Add Downtime </label>
+      </form>
+              <div id="dtFormGroup">
+        <div data-role='fieldcontain'>
+                  <label for='dtReasonOeeFormSelect'>Downtime Reason:<span id="errOeeForm7" style="color:#990033; display:none"> !Required</span></label>
+                  <select id="dtReasonOeeFormSelect">
+          </select>
+                </div>
+        <div data-role='fieldcontain'>
+                  <label for='durOeeFormInput'>Duration:<span id="errOeeForm8" style="color:#990033; display:none"> !Required</span></label>
+                  <input id='durOeeFormInput'  type='number' min='0' value='' placeholder="Minutes"/>
+                </div>
+      </div>
+              <form>
+        <label>
+                  <input type="checkbox" id="addQltCheckbox"/>
+                  Add Scrap </label>
+      </form>
+              <div id="qltFormGroup">
+        <div data-role='fieldcontain'>
+                  <label for='qltReasonOeeFormSelect'>Quality Reason:<span id="errOeeForm9" style="color:#990033; display:none"> !Required</span></label>
+                  <select id="qltReasonOeeFormSelect">
+          </select>
+                </div>
+        <div data-role='fieldcontain'>
+                  <label for='scrapQtyOeeFormInput'>Quantity Scrapped:<span id="errOeeForm10" style="color:#990033; display:none"> !Required</span></label>
+                  <input id='scrapQtyOeeFormInput'  type='number' min='0' value='' placeholder="Pieces"/>
+                </div>
+      </div>
+            </div>
+    <div data-role='fieldcontain'>
+              <label for='commentsOeeFormTxt'>Comments:<span id="errOeeForm11" style="color:#990033; display:none"> !Required</span></label>
+              <textarea id="commentsOeeFormTxt"></textarea>
+            </div>
+    <table data-role="table" id="oeeLogValidation">
+              <thead>
+        <tr>
+                  <th>OEE</th>
+                  <th>Availability</th>
+                  <th>Performance</th>
+                  <th>Quality</th>
+                </tr>
+      </thead>
+              <tbody>
+        <tr>
+                  <td><span class="fontSize" id="oeeLogCalc"></span><span class="fontSize">%</span></td>
+                  <td><span class="fontSize" id="availLogCalc"></span><span class="fontSize">%</span></td>
+                  <td><span class="fontSize" id="perfLogCalc"></span><span class="fontSize">%</span></td>
+                  <td><span class="fontSize" id="qualLogCalc"></span><span class="fontSize">%</span></td>
+                </tr>
+      </tbody>
+            </table>
+    <div id="oeeLogValidationError"></div>
+    <fieldset class="ui-grid-b ui-responsive buttonSet">
+              <div class="ui-block-a">
+        <input type="button" id="cancelOeeFormBtn" value="Cancel"/>
+      </div>
+              <div class="ui-block-b">
+        <input type="button" id="saveOeeFormBtn" value="Save"/>
+      </div>
+              <div class="ui-block-c">
+        <input type="button" id="updateOeeFormBtn" value="Update"/>
+      </div>
+            </fieldset>
+  </div>
+          <!-- /content --> 
+        </div>
+<!-- /page --> 
+
+<!-- *************oeeLogPage************* -->
+<div data-role="page" id="oeeLogPage" data-theme="a" class="blueCollapsible">
+          <div id="oeeLogPageContent" data-role="content">
+    <table data-role="table" id="oeescoreboard" class="headerTitle">
+              <thead>
+        <tr>
+                  <th></th>
+                </tr>
+      </thead>
+              <tbody>
+        <tr>
+                  <td><span class="oeescore" id="eqpNameTxt"></span><span class="oeescore"> OEE</span></td>
+                  <!--td><div class="scorebox"><span id="oeeTxt"></span></div></td-->
+                  <td><div class="scorebox" id="oeeTxt"></div></td>
+                </tr>
+      </tbody>
+            </table>
+    <table data-role="table" id="scoreboard">
+              <thead>
+        <tr>
+                  <th>Availability</th>
+                  <th>Performance</th>
+                  <th>Quality</th>
+                </tr>
+      </thead>
+              <tbody>
+        <tr>
+                  <td><div class="scorebox" id="availTxt"></div></td>
+                  <td><div class="scorebox" id="perfTxt"></div></td>
+                  <td><div class="scorebox" id="qualTxt"></div></td>
+                </tr>
+      </tbody>
+            </table>
+    <br/>
+    <div data-role="collapsible" data-content-theme="d">
+              <h4>Log Information</h4>
+              <table data-role="table" class="logHeader fiveCol" id="targetTbl">
+        <thead>
+                  <tr>
+            <th>OEE Target</th>
+            <th>Availability Target</th>
+            <th>Performance Target</th>
+            <th>Quality Target</th>
+            <th id="btnheader"></th>
+          </tr>
+                </thead>
+        <tbody>
+                  <tr>
+            <td><span class="fontSize" id="oeeTarget"></span><span class="fontSize">%</span></td>
+            <td><span class="fontSize" id="availTarget"></span><span class="fontSize">%</span></td>
+            <td><span class="fontSize" id="perfTarget"></span><span class="fontSize">%</span></td>
+            <td><span class="fontSize" id="qualTarget"></span><span class="fontSize">%</span></td>
+            <td class="tdBtn" id="editTargetBtn">Edit Target</td>
+          </tr>
+                </tbody>
+      </table>
+              <table data-role="table" class="logHeader sixCol" id="notTbl">
+        <thead>
+                  <tr>
+            <th>Net Operating Time</th>
+            <th>Downtime</th>
+            <th>Target Pcs</th>
+            <th>Actual Pcs</th>
+            <th>Good Pcs</th>
+            <th>Scrap Pcs</th>
+          </tr>
+                </thead>
+        <tbody>
+                  <tr>
+            <td><span class="fontSize" id="notTxt"></span></td>
+            <td><span class="fontSize" id="dtTxt"></span></td>
+            <td><span class="fontSize" id="targetQtyTxt"></span></td>
+            <td><span class="fontSize" id="actualQtyTxt"></span></td>
+            <td><span class="fontSize" id="goodQltTxt"></span></td>
+            <td><span class="fontSize" id="qtyScrpTxt"></span></td>
+          </tr>
+                </tbody>
+      </table>
+              <table data-role="table" class="logHeader fiveCol" id="infoTable">
+        <thead>
+                  <tr>
+            <th>Plant Name</th>
+            <th>Work Center</th>
+            <th>Date</th>
+            <th>Shift</th>
+            <th>Production Lead</th>
+          </tr>
+                </thead>
+        <tbody>
+                  <tr>
+            <td><span class="fontSize" id="plantNameTxt"></span></td>
+            <td><span class="fontSize" id="wcNameTxt"></span></td>
+            <td><span class="fontSize" id="prdDateTxt"></span></td>
+            <td><span class="fontSize" id="shiftTxt"></span></td>
+            <td><span class="fontSize" id="prdLeadTxt"></span></td>
+          </tr>
+                </tbody>
+      </table>
+              <br/>
+            </div>
+    <!--end collapsible --> 
+    <br/>
+    <div data-role="collapsible" data-content-theme="a">
+              <h4>OEE Log</h4>
+              <br/>
+              <!--a href="#oeeFormPage" id="oeeFormAddALogBtn" data-inline="true" data-role="button" data-theme="d" data-rel="dialog" data-transition="pop" >Add a Log</a-->
+              
+              <fieldset class="ui-grid-b ui-responsive buttonSet">
+        <div class="ui-block-a">
+                  <input type="button" id="oeeFormAddALogBtn" value="Add a Log"/>
+                </div>
+        <div class="ui-block-b"></div>
+        <div class="ui-block-c"></div>
+      </fieldset>
+              <br/>
+              <br/>
+              <div class="tableHeader">Performance Log</div>
+              <table data-role="table" class="logDetail">
+        <thead>
+                <th>Type</th>
+                  <th>Start Time</th>
+                  <th>End Time</th>
+                  <th>Rate</th>
+                  <th>Target Qty</th>
+                  <th>Actual Qty</th>
+                  <th>Item#</th>
+                  <th colspan="2"></th>
+                    </thead>
+                <tbody id="oeePerfLogTbody">
+                </tbody>
+      </table>
+              <br/>
+              <div class="tableHeaderWhite">Downtime and Quality Log</div>
+              <table data-role="table" class="logDetail" id="oeeDtQltLogTable">
+        <thead>
+                <th>Downtime Reason</th>
+                  <th>DT Duration</th>
+                  <th>Quality Reason</th>
+                  <th>Qty Scrapped</th>
+                  <th>Comments</th>
+                  <th colspan="2"></th>
+                    </thead>
+                <tbody id="oeeDtQltLogTbody">
+                </tbody>
+      </table>
+            </div>
+    <!--end collapsible -->
+    
+    <div class="errorDiv" id="oeeLogPageError"/>
+    <br/>
+    <br/>
+  </div>
+          <!-- /content -->
+          
+          <div data-role="footer" data-theme="d" data-position="fixed" class="fixedfooter"> 
+    <!--h1>OEE Log</h1--> 
+    <a href="#left-panel" data-icon="bars" data-iconpos="notext" data-shadow="false" data-iconshadow="false"></a> </div>
+          <!-- /footer -->
+          
+          <div data-role="panel" id="left-panel" data-theme="c">
+    <ul data-role="listview" data-theme="d">
+              <li data-icon="delete"><a href="#" data-rel="close">Close</a></li>
+              <li data-icon="home"><a href="{!$Page.ProductionKpi}" data-rel="" data-transition="slide" target="_blank">Main</a></li>
+              <li data-icon="plus"><a href="#newOeeLogPage" data-rel="dialog" data-transition="pop">New OEE Log</a></li>
+            </ul>
+  </div>
+          <!-- /panel --> 
+        </div>
+<!-- /page --> 
+
+<script type="text/javascript" src="phonegap.js"></script> 
+<script src="jquery/inline.js"></script> 
+<script src="jquery/heijunka.js"></script>
+</body>
+
+        <!--body>
+        <div class="app">
+            <h1>PhoneGap</h1>
+            <div id="deviceready" class="blink">
+                <p class="event listening">Connecting to Device</p>
+                <p class="event received">Device is Ready</p>
+            </div>
+        </div>
+        <script type="text/javascript" src="phonegap.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript">
+            app.initialize();
+        </script>
+    </body-->
+</html>

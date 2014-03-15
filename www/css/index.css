@@ -1,0 +1,1219 @@
+html{-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}
+html,button,input,select,textarea,table{
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	text-shadow:none;
+}
+body{margin:0}
+a{text-decoration:none;border-bottom:1px dotted}
+a:focus{outline:thin dotted}
+a:hover,a:active{outline:0}
+
+h1{font-size:2em;margin:0.67em 0;font-weight:normal;}
+h2{font-size:1.5em;margin:0.83em 0;font-weight:normal;}
+h3{font-size:1.17em;margin:1em 0;font-weight:normal;}
+h4{font-size:1em;margin:1.33em 0;font-weight:normal;}
+h5{font-size:0.83em;margin:1.67em 0;font-weight:normal;}
+h6{font-size:0.75em;margin:2.33em 0;font-weight:normal;}
+
+
+table{
+    border-collapse:collapse;
+    border-spacing:0;
+    margin: 0 auto;
+}
+
+
+
+.headerTitle tbody{
+	border-style:solid;
+	border-color:#bbd9ee;
+	border-width:10px;
+}
+.headerTitle td,
+.headerTitle th,
+.headerTitle tbody th,
+.headerTitle tbody td{
+	margin:0;
+	background-color:#206ba4;
+	text-align:center;
+	padding:10px;
+}
+.headerTitle thead td,
+.headerTitle thead th,
+.headerTitle .ui-table-cell-label{
+	display:none;
+}
+.headerTitle .oeescore{
+	font-size:3.3em;
+	font-weight:normal;
+	color:#CCC;
+    line-height:normal;
+}
+@media ( max-width: 35em ) {
+	.headerTitle .oeescore{
+		font-size:2.5em;
+	}
+}
+.headerTitle .scorebox{
+	font-size:4.0em;
+	font-weight:normal;
+	color:#FFF;
+	padding:20px;
+}
+@media ( min-width: 40em ) {
+	.headerTitle td,
+	.headerTitle th,
+	.headerTitle tbody th,
+	.headerTitle tbody td{
+		display: table-cell;
+		margin:0;
+	}
+	.headerTitle thead td,
+	.headerTitle thead th{
+		display:none;
+	}
+    .headerTitle tbody td .ui-table-cell-label{
+		display:none;
+	}
+}
+
+
+/* ****************OEE Scoreboard****************** */
+#scoreboard tbody{
+	border-style:solid;
+	border-color:#bbd9ee;
+	border-width:10px;
+}
+#scoreboard td,
+#scoreboard th,
+#scoreboard tbody th,
+#scoreboard tbody td{
+	margin:0;
+	background-color:#206ba4;
+	text-align:center;
+	padding:10px;
+}
+#scoreboard thead td,
+#scoreboard thead th {
+	display:none;
+}
+#scoreboard .ui-table-cell-label{
+    font-size: 1.8em;
+    font-weight: 100;
+    color: #CCC;
+    margin: 0px;
+    text-align: center;
+}
+#scoreboard .scorebox{
+	clear:both;
+	font-size:3.0em;
+	font-weight:normal;
+	color:#FFF;
+	padding:20px;
+}
+
+@media ( min-width: 40em ) {
+	#scoreboard td,
+	#scoreboard th,
+	#scoreboard tbody th,
+	#scoreboard tbody td,
+	#scoreboard thead td {
+		display: table-cell;
+		margin: 0;
+		background-color:#206ba4;
+		text-align:center;
+		color:#FFF;
+	}
+	#scoreboard thead th {
+		background-color:#206ba4;
+		border-style:solid solid none;
+		color:#CCC;
+		padding-bottom:0;
+	}
+}
+
+
+/* ****************Daily Log Scoreboard****************** */
+#scoreboardDl tbody{
+	border-style:solid;
+	border-color:#bbd9ee;
+	border-width:10px;
+}
+#scoreboardDl td,
+#scoreboardDl th,
+#scoreboardDl tbody th,
+#scoreboardDl tbody td{
+	margin:0;
+	background-color:#206ba4;
+	text-align:center;
+	padding:10px;
+}
+#scoreboardDl thead td,
+#scoreboardDl thead th {
+	display:none;
+}
+#scoreboardDl .ui-table-cell-label{
+    font-size: 1.2em;
+    font-weight: 100;
+    color: #CCC;
+    margin: 0px;
+    text-align: center;
+    white-space: nowrap;
+}
+#scoreboardDl .scorebox{
+	clear:both;
+	font-size:2.0em;
+	font-weight:normal;
+	color:#FFF;
+	padding:15px;
+}
+#scoreboardDl .scoreboxBlue{
+	clear:both;
+	font-size:2.0em;
+	font-weight:normal;
+	color:#666;
+	padding:15px;
+    background-color:#bbd9ee;
+}
+@media ( max-width: 35em ) {
+    #scoreboardDl .ui-table-cell-label {
+        font-size: 1.5em;
+        font-weight: 100;
+        color: #CCC;
+        margin: 0px;
+        text-align: center;
+        white-space: nowrap;
+    }
+}
+@media ( min-width: 40em ) {
+	#scoreboardDl td,
+	#scoreboardDl th,
+	#scoreboardDl tbody th,
+	#scoreboardDl tbody td,
+	#scoreboardDl thead td {
+		display: table-cell;
+		margin: 0;
+		background-color:#206ba4;
+		text-align:center;
+		color:#FFF;
+        width: 25%;
+	}
+	#scoreboardDl thead th {
+		background-color:#206ba4;
+		border-style:solid solid none;
+		color:#CCC;
+		padding-bottom:0;
+	}
+}
+
+
+
+
+/* ****************logHeader****************** */
+.logHeader td,
+.logHeader th,
+.logHeader tbody th,
+.logHeader tbody td,
+.logHeader thead td,
+.logHeader thead th {
+	margin: 0;
+	background-color:#ebf4fa;
+	border-style:solid;
+	border-color:#bbd9ee;
+	border-width:1px;
+}
+.logHeader .ui-table-cell-label{
+	font-size:1.2em;
+	font-weight:normal;
+	color:#333;
+	vertical-align:middle;
+	white-space:nowrap;
+}
+.logHeader .fontSize{
+	font-size:1.2em;
+	font-weight:normal;
+	color:#666;
+	vertical-align:middle;
+	white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+.logHeader .tdBtn{
+    font-size:1.2em;
+	font-weight:200;
+	vertical-align:middle;
+    text-shadow:none;
+    text-align:center;
+    background-color:#206ba4;
+    color:#ccc;
+}
+#btnheader{
+     background-color:#206ba4;
+}
+@media ( min-width: 40em ) {
+	/* Show the table header rows and set all cells to display: table-cell */ 
+	.logHeader td,
+	.logHeader th,
+	.logHeader tbody th,
+	.logHeader tbody td{
+		display: table-cell;
+		margin: 0;
+		background-color:#ebf4fa;
+		border-style:none solid solid solid;
+		border-color:#bbd9ee;
+		border-width:5px;
+        padding:5px;
+	}
+    .logHeader thead td,
+	.logHeader thead th {
+		display: table-cell;
+		margin: 0;
+		background-color:#ebf4fa;
+		border-style:solid solid none solid;
+		border-color:#bbd9ee;
+		border-width:5px;
+        font-size: .8em;
+	}
+	/* Hide the labels in each cell */ 
+	.logHeader td .ui-table-cell-label,
+	.logHeader th .ui-table-cell-label { 
+		display: none;
+	}
+}
+
+.logDetail td,
+.logDetail th,
+.logDetail tbody th,
+.logDetail tbody td{
+	margin: 0;
+    padding:0;
+	background-color:#ebf4fa;
+	border-style:solid;
+	border-color:#bbd9ee;
+	border-width:1px;
+}
+.logDetail tbody tr{
+    border-style: none none solid none;
+	border-width: 35px;
+    border-color:#bbd9ee;
+}
+.logDetail thead td,
+.logDetail thead th{
+    display: none;
+}
+.logDetail .fontSize { 
+    font-size:1.4em;
+	font-weight:normal;
+	color:#666;
+	vertical-align:middle;
+}
+
+.logDetail .tdBtn{
+    font-size:1.5em;
+	font-weight:200;
+	vertical-align:middle;
+    text-shadow:none;
+    text-align:center;
+    background-color:#206ba4;
+    color:#ccc;
+    padding: 10px;
+    border-style: solid none none none;
+    border-width: 8px;
+    border-color:#bbd9ee;
+}
+.logDetail td:before { 
+    font-size:.7em;
+	font-weight:normal;
+	color:#333;
+	vertical-align:middle;
+	white-space:nowrap;
+    padding: .4em;
+    min-width: 30%;
+    display: inline-block;
+    margin: -.4em 1em -.4em -.1em;
+}
+@media ( min-width: 43em ) {
+	/* Show the table header rows and set all cells to display: table-cell */ 
+	.logDetail td,
+	.logDetail th,
+	.logDetail tbody th,
+	.logDetail tbody td,
+    .logDetail thead td,
+	.logDetail thead th{
+		display: table-cell;
+		margin: 0;
+		background-color:#ebf4fa;
+		border-style:none solid solid solid;
+		border-color:#bbd9ee;
+		border-width:1px;
+        padding:5px;
+        font-size: .8em;
+	}
+    .logDetail tbody tr{
+        border-style: none;
+    }
+    .logDetail .fontSize { 
+        font-size:1.0em;
+        font-weight:200;
+        color:#666;
+        vertical-align:middle;
+    }
+    .logDetail td:before {
+        display:none;
+    }
+    .logDetail .tdBtn{
+        font-size:1.2em;
+        font-weight:normal;
+        vertical-align:middle;
+        text-shadow:none;
+        text-align:center;
+        background-color:#206ba4;
+        color:#ccc;
+        padding: 10px;
+        border-style: solid;
+        border-color:#bbd9ee;
+        border-width: 1px;
+        width: 1em;
+    }
+}
+
+/* *************************** oeeDtQltLogTable ***************** */
+#oeeDtQltLogTable tbody td{
+    background-color:#fff;
+}
+#oeeDtQltLogTable tbody .tdBtn{
+    background-color:#206ba4;
+}
+@media ( min-width: 43em ) {
+    #oeeDtQltLogTable th,
+    #oeeDtQltLogTable thead th{
+        background-color:#fff;
+    }
+}
+
+/* *****************OEE Mobile Labels *********************** */
+#oeeDtQltLogTbody td:nth-of-type(2):before { content: "Downtime Reason"; }
+#oeeDtQltLogTbody td:nth-of-type(3):before { content: "DT Duration"; }
+#oeeDtQltLogTbody td:nth-of-type(4):before { content: "Quality Reason"; }
+#oeeDtQltLogTbody td:nth-of-type(5):before { content: "Qty Scrapped"; }
+#oeeDtQltLogTbody td:nth-of-type(6):before { content: "Comments"; }
+
+#oeePerfLogTbody td:nth-of-type(2):before { content: "Type";}
+#oeePerfLogTbody td:nth-of-type(3):before { content: "Start Time"; }
+#oeePerfLogTbody td:nth-of-type(4):before { content: "End Time"; }
+#oeePerfLogTbody td:nth-of-type(5):before { content: "Rate"; }
+#oeePerfLogTbody td:nth-of-type(6):before { content: "Target Qty"; }
+#oeePerfLogTbody td:nth-of-type(7):before { content: "Actual Qty"; }
+#oeePerfLogTbody td:nth-of-type(8):before { content: "Item#"; }
+
+/*  ****Daily Log Mobile Labels**** */
+#prdLogTbody td:nth-of-type(5):before { content: "Start Time"; }
+#prdLogTbody td:nth-of-type(6):before { content: "End Time"; }
+#prdLogTbody td:nth-of-type(7):before { content: "Duration"; }
+#prdLogTbody td:nth-of-type(8):before { content: "Rate"; }
+#prdLogTbody td:nth-of-type(9):before { content: "Target Qty "; color:#fff; }
+#prdLogTbody td:nth-of-type(10):before { content: "Actual Qty "; color:#fff; }
+#prdLogTbody td:nth-of-type(11):before { content: "Type"; }
+#prdLogTbody td:nth-of-type(12):before { content: "Item#"; }
+#prdLogTbody td:nth-of-type(13):before { content: "Job#"; }
+#prdLogTbody td:nth-of-type(14):before { content: "Comments"; }
+
+
+#dtLogTbody td:nth-of-type(5):before { content: "Start Time"; }
+#dtLogTbody td:nth-of-type(6):before { content: "End Time"; }
+#dtLogTbody td:nth-of-type(7):before { content: "Duration"; }
+#dtLogTbody td:nth-of-type(9):before { content: "Equipment"; }
+#dtLogTbody td:nth-of-type(10):before { content: "Status"; }
+#dtLogTbody td:nth-of-type(11):before { content: "Reason"; }
+#dtLogTbody td:nth-of-type(12):before { content: "Comments"; }
+
+#mcAndonTbody td:nth-of-type(3):before { content: "Status"; }
+#mcAndonTbody td:nth-of-type(4):before { content: "Down Since"; }
+#mcAndonTbody td:nth-of-type(6):before { content: "Equipment"; }
+#mcAndonTbody td:nth-of-type(7):before { content: "Reason"; }
+#mcAndonTbody td:nth-of-type(8):before { content: "Comments"; }
+
+#qualLogTbody td:nth-of-type(4):before { content: "Item#"; }
+#qualLogTbody td:nth-of-type(5):before { content: "Job#"; }
+#qualLogTbody td:nth-of-type(6):before { content: "Scrap Qty"; }
+#qualLogTbody td:nth-of-type(7):before { content: "Rework Qty"; }
+#qualLogTbody td:nth-of-type(8):before { content: "Equipment"; }
+#qualLogTbody td:nth-of-type(9):before { content: "Reason"; }
+#qualLogTbody td:nth-of-type(10):before { content: "Comments"; }
+
+
+#oeeLogValidation td,
+#oeeLogValidation th,
+#oeeLogValidation tbody th,
+#oeeLogValidation tbody td,
+#oeeLogValidation thead td,
+#oeeLogValidation thead th {
+	margin: 0;
+	background-color:#990033;
+	border-style:solid;
+	border-color:#fff;
+	border-width:1px;
+}
+#oeeLogValidation .ui-table-cell-label{
+	font-size:1.2em;
+	font-weight:normal;
+	color:#fff;
+	vertical-align:middle;
+	white-space:nowrap;
+}
+#oeeLogValidation .fontSize{
+	font-size:1.4em;
+	font-weight:normal;
+	color:#fff;
+	vertical-align:middle;
+	white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+@media ( min-width: 40em ) {
+	/* Show the table header rows and set all cells to display: table-cell */ 
+	#oeeLogValidation td,
+	#oeeLogValidation th,
+	#oeeLogValidation tbody th,
+	#oeeLogValidation tbody td{
+		display: table-cell;
+		margin: 0;
+		background-color:#990033;
+		border-style:none solid solid solid;
+		border-color:#fff;
+		border-width:5px;
+        padding:5px;
+	}
+    #oeeLogValidation thead td,
+	#oeeLogValidation thead th {
+		display: table-cell;
+		margin: 0;
+		background-color:#990033;
+		border-style:solid solid none solid;
+		border-color:#fff;
+		border-width:5px;
+        color:#fff;
+        width:25%;
+        font-weight: 200;
+	}
+	/* Hide the labels in each cell */ 
+	#oeeLogValidation td .ui-table-cell-label,
+	#oeeLogValidation th .ui-table-cell-label { 
+		display: none;
+	}
+}
+#oeeLogValidationError{
+    background-color:#fff;
+    color:#990033;
+    font-size:1.0em;
+	font-weight:normal;
+}
+
+
+.scorebox{
+	background-color:#669966;
+}
+.scoreboxRed{
+    background-color:#990033;
+    font-size: 3.0em;
+    font-weight: normal;
+    color: #FFF;
+    padding: 20px;
+}
+.tableHeader{
+    background-color: #ebf4fa;
+    font-size: 1.8em;
+    font-weight: normal;
+    color: #666;
+    padding: 5px;
+    text-align: center;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #bbd9ee;
+}
+.tableHeaderWhite{
+    background-color: #fff;
+    font-size: 1.8em;
+    font-weight: normal;
+    color: #666;
+    padding: 5px;
+    text-align: center;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #bbd9ee;
+}
+.errorDiv{
+    clear:both;
+    color:red;
+}
+
+/* *********fixed header********* */
+#oeeLogPage .ui-header-fixed {
+    top: -1px;
+    padding-top: 1px;
+    background: rgba(255,255,255, 0.95);
+    border: none;
+}
+#oeeLogPage .ui-header-fixed .ui-btn{
+    z-index: 10;
+    border: none;
+}
+
+/* *********fixed footer********* */
+.fixedfooter {
+    padding-top: 1px;
+    background: rgba(255,255,255, 0.95);
+    border: none;
+}
+.fixedfooter .ui-btn{
+    z-index: 10;
+    border: none;
+    bottom: 0px;
+    left: 10px;
+}
+
+
+/* ************Collapsible Set************* */
+.blueCollapsible .ui-collapsible-inset .ui-collapsible-heading .ui-btn {
+    border-style: none;
+    font-size: 1em;
+    font-weight: 200;
+    background-color: #206ba4;
+    color: #ccc;
+    padding-top: 15px;
+	padding-bottom: 15px;
+    text-shadow: none;
+}
+.blueCollapsible .ui-collapsible-inset{
+    background-color: #bbd9ee;
+}
+.blueCollapsible .ui-collapsible-inset.ui-collapsible-themed-content .ui-collapsible-content {
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border: none;
+    background-color: #bbd9ee;
+}
+
+
+
+
+#oeeTargetCalc{
+    font-size:1.5em;
+	font-weight:200;
+	vertical-align:middle;
+    text-shadow:none;
+    text-align:center;
+    color:#ccc;
+    padding: 10px;
+    border-style: solid;
+    border-width: 3px;
+    border-color:#206ba4;
+    background-color:#669966;
+}
+
+#dtFormGroup{
+    background-color: #f1efe2;
+    padding: 10px;
+}
+#qltFormGroup{
+    background-color: #f1efe2;
+    padding: 10px;
+}
+
+#targetTbl{margin-bottom:10px}
+#notTbl{margin-bottom:10px}
+#infoTable{margin-bottom:10px}
+@media ( min-width: 40em ) {
+    .fiveCol tbody td{width:20%}
+    .sixCol tbody td{width:16%;}
+    #targetTbl{margin-bottom:-3px}
+    #notTbl{margin-bottom:-3px}
+    #infoTable{margin-bottom:-3px}
+}
+
+/* *************Dialog top margin**************** */
+.ui-dialog-contain {
+    margin: 5% auto 1em;
+}
+
+/* *******************Blue Button*************** */
+.ui-page-theme-a .buttonSet .ui-btn{
+    background-color:#206ba4;
+    border: none;
+    font-size: 1.2em;
+    font-weight: 300;
+    color: #ccc;
+    text-shadow: none;
+}
+
+
+/* *******************Error Div Style*************** */
+.white_content {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #990033;
+    z-index: 1002;
+    overflow: visible;
+    padding: 10px;
+    text-shadow: none;
+    color: #fff;
+    font-weight: 200;
+    text-align: center;
+}
+.white_content h4{
+    font-size: 1.5em;
+    font-weight: 100;
+    text-shadow: none;
+}
+.white_content p{
+	margin-bottom: 5px;
+    padding: 10px
+}
+.white_content span{
+    font-style: italic;
+    color: #ccc;
+    font-weight: 100;
+    text-shadow: none;
+}
+
+/* ************************ OEE Report Styles ****************** */
+.hidden{
+    display:none;
+}
+.visHidden{
+	visibility:hidden;
+}
+
+@media ( max-width: 40em ){
+    .tabletSection{
+        display:none;
+    }
+}
+@media ( min-width: 40em ){
+    .mobileSection{
+        display:none;
+    }
+}
+
+.mobileSection{
+	margin-top:-22px;
+}
+.tabletSection{
+    margin-top:25px;
+    text-align: -webkit-center;
+}
+
+.header {
+    position: fixed;
+    top:0;
+    z-index: 2;
+    width: 100%;
+    pointer-events: none;
+    display:block;
+    background: rgba(255,255,255,0.95);
+    font-size:1.8em;
+    font-weight:normal;
+    padding-top: 10px;
+    padding-bottom:8px;
+    color:#666;
+    text-align: center;
+}
+
+
+.button-main {
+    display: inline-block;
+    padding: 0.9em 1.5em 0.65em 1.5em;
+    font-size: 16px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    -webkit-border-radius: 8px 8px;
+    -moz-border-radius: 8px / 8px;
+    border-radius: 8px / 8px;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #990033;
+    color: #fff;
+    border: 0;
+    -webkit-box-shadow: 0px 5px 0px 0px #bb3f40;
+    -moz-box-shadow: 0px 5px 0px 0px #bb3f40;
+    box-shadow: 0px 5px 0px 0px #bb3f40;
+    margin: 15px;
+    cursor: pointer;
+}
+.button-main:hover {
+    background-color: #f83032;
+    color: #fff;
+}
+
+.styled-select {
+    width: 240px;
+    height: 50px;
+    background: none;
+    background-color: #446644;
+    color: #fff;
+    border: 0;
+    -webkit-box-shadow: 0px 5px 0px 0px #669966;
+    -moz-box-shadow: 0px 5px 0px 0px #669966;
+    box-shadow: 0px 5px 0px 0px #669966;
+    font-size: 16px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 200;
+    -webkit-appearance: none;
+    padding: 16px;
+    /*margin-left:0px;*/
+}
+.styled-select:hover {
+    background-color: #3eaa3e;
+}
+
+@media ( max-width: 40em ){
+    .styled-select{
+        margin-top: 15px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.nav{
+    padding: 20px 0px;
+    margin-top: 60px;
+    width: 100%;
+    text-align: center;
+}
+div {
+    display: block;
+}
+.section{
+    text-align: center;
+    width: 100%;
+    float: left;
+    /*min-height: 1000px;*/
+}
+.section h1 {
+    display: block;
+    color: #666;
+    margin-top: 4em;
+    margin-bottom: 1em;
+}
+.section p {
+    margin: 3.0em;
+    margin-top: 0;
+    font-size: 1.6em;
+    color: #666;
+}
+.tltSty{
+    font-size: 1.4em;
+    color: #666;
+}
+
+
+/* *************************** Pure CSS Table Reflow***************** */
+.cssTableReflow { 
+  width: 100%; 
+  border-collapse: collapse; 
+}
+.cssTableReflow th { 
+    background-color: #ebf4fa;
+    border-style: solid;
+    border-color: #bbd9ee;
+    border-width: 1px;
+    padding: 5px;
+}
+.cssTableReflow td, th { 
+    text-align: left;
+    border-style: none solid solid solid;
+    border-color: #bbd9ee;
+    border-width: 1px;
+    padding: 5px;
+    font-size: 1.2em;
+    background: #ebf4fa;
+    color: #666;
+}
+@media ( max-width: 43em ) {
+    .cssTableReflow table, 
+    .cssTableReflow thead, 
+    .cssTableReflow tbody, 
+    .cssTableReflow th, 
+    .cssTableReflow td, 
+    .cssTableReflow tr{
+        display: block;
+    }
+    .cssTableReflow thead tr { 
+        display:none;
+    }
+    .cssTableReflow tbody tr{ 
+        margin-top:20px;
+    }
+    .cssTableReflow tr { 
+        background-color: #ebf4fa;
+        border-style: solid;
+        border-color: #bbd9ee;
+        border-width: 1px;
+        padding: 0px;
+    }
+    .cssTableReflow td { 
+        border: none;
+        border-bottom: 1px solid #bbd9ee; 
+        position: relative;
+        min-height: 22px;
+        vertical-align: middle;
+        text-indent: 45%;
+        font-size: 1.5em;
+    }
+    .cssTableReflow td:before { 
+        position: absolute;
+        top: 6px;
+        left: 4px;
+        width: 45%; 
+        padding-right: 10px; 
+        white-space: nowrap;
+        vertical-align: middle;
+        text-indent: 0;
+        font-size: .8em;
+    }
+    
+    <!--*****************Drill Down Report****************** -->
+    #oeeDetailLogTable td:nth-of-type(2):before { content: "Type"; fontSize:1.2em; }
+    #oeeDetailLogTable td:nth-of-type(3):before { content: "Start Time"; fontSize:1.2em; }
+    #oeeDetailLogTable td:nth-of-type(4):before { content: "End Time"; }
+    #oeeDetailLogTable td:nth-of-type(5):before { content: "Rate"; }
+    #oeeDetailLogTable td:nth-of-type(6):before { content: "Target Qty"; }
+    #oeeDetailLogTable td:nth-of-type(7):before { content: "Actual Qty"; }
+    #oeeDetailLogTable td:nth-of-type(8):before { content: "Item#"; }
+    #oeeDetailLogTable td:nth-of-type(9):before { content: "Dowtime Reason"; }
+    #oeeDetailLogTable td:nth-of-type(10):before { content: "DT Duration"; }
+    #oeeDetailLogTable td:nth-of-type(11):before { content: "Quality Reason"; }
+    #oeeDetailLogTable td:nth-of-type(12):before { content: "Qty Scrapped"; }
+    #oeeDetailLogTable td:nth-of-type(13):before { content: "Comments"; }
+    
+  
+    #prdDetailLogTbl td:nth-of-type(5):before { content: "Start Time"; }
+    #prdDetailLogTbl td:nth-of-type(6):before { content: "End Time"; }
+    #prdDetailLogTbl td:nth-of-type(7):before { content: "Duration"; }
+    #prdDetailLogTbl td:nth-of-type(8):before { content: "Rate"; }
+    #prdDetailLogTbl td:nth-of-type(9):before { content: "Target Qty"; }
+    #prdDetailLogTbl td:nth-of-type(10):before { content: "Actual Qty"; }
+    #prdDetailLogTbl td:nth-of-type(11):before { content: "Type"; }
+    #prdDetailLogTbl td:nth-of-type(12):before { content: "Comments"; }
+    
+    #minorDtDetailLogTbl td:nth-of-type(3):before { content: "Start Time"; }
+    #minorDtDetailLogTbl td:nth-of-type(4):before { content: "End Time"; }
+    #minorDtDetailLogTbl td:nth-of-type(5):before { content: "Duration"; }
+    #minorDtDetailLogTbl td:nth-of-type(6):before { content: "Equipment"; }
+    #minorDtDetailLogTbl td:nth-of-type(7):before { content: "Status"; }
+    #minorDtDetailLogTbl td:nth-of-type(8):before { content: "Reason"; }
+    #minorDtDetailLogTbl td:nth-of-type(9):before { content: "Comments"; }
+    
+    #majorDtDetailLogTbl td:nth-of-type(3):before { content: "Start Date"; }
+    #majorDtDetailLogTbl td:nth-of-type(4):before { content: "End Date"; }
+    #majorDtDetailLogTbl td:nth-of-type(5):before { content: "Duration"; }
+    #majorDtDetailLogTbl td:nth-of-type(6):before { content: "Equipment"; }
+    #majorDtDetailLogTbl td:nth-of-type(7):before { content: "Status"; }
+    #majorDtDetailLogTbl td:nth-of-type(8):before { content: "Reason"; }
+    #majorDtDetailLogTbl td:nth-of-type(9):before { content: "Comments"; }
+    
+    #qualityDetailLogTbl td:nth-of-type(3):before { content: "Item#"; }
+    #qualityDetailLogTbl td:nth-of-type(4):before { content: "Job#"; }
+    #qualityDetailLogTbl td:nth-of-type(5):before { content: "Scrap Qty"; }
+    #qualityDetailLogTbl td:nth-of-type(6):before { content: "Rework Qty"; }
+    #qualityDetailLogTbl td:nth-of-type(7):before { content: "Equipment"; }
+    #qualityDetailLogTbl td:nth-of-type(8):before { content: "Reason"; }
+    #qualityDetailLogTbl td:nth-of-type(9):before { content: "Comments"; }
+    
+    #plantAndonTbody td:nth-of-type(1):before { content: "Down Since"; }
+    #plantAndonTbody td:nth-of-type(2):before { content: "Start Time"; }
+    #plantAndonTbody td:nth-of-type(3):before { content: "Equipment"; }
+    #plantAndonTbody td:nth-of-type(4):before { content: "Work Center"; }
+    #plantAndonTbody td:nth-of-type(5):before { content: "Reason"; }
+    #plantAndonTbody td:nth-of-type(6):before { content: "Comments"; }
+    
+}
+
+
+
+
+/* ********* animated ****** */
+.animated{
+    -webkit-animation-fill-mode:both;
+    -moz-animation-fill-mode:both;
+    -ms-animation-fill-mode:both;
+    -o-animation-fill-mode:both;
+    animation-fill-mode:both;
+    -webkit-animation-duration:1s;
+    -moz-animation-duration:1s;
+    -ms-animation-duration:1s;
+    -o-animation-duration:1s;
+    animation-duration:1s
+}
+.animated.hinge{
+    -webkit-animation-duration:1s;
+    -moz-animation-duration:1s;
+    -ms-animation-duration:1s;
+    -o-animation-duration:1s;
+    animation-duration:1s
+}
+@-webkit-keyframes fadeIn{
+    0%{
+        opacity:0}
+    100%{
+        opacity:1}
+}
+@-webkit-keyframes fadeInDown{
+    0%{
+        opacity:0;
+        -webkit-transform:translateY(-20px)}
+    100%{
+        opacity:1;
+        -webkit-transform:translateY(0)}
+}
+@-moz-keyframes fadeInDown{
+    0%{
+        opacity:0;
+        -moz-transform:translateY(-20px)}
+    100%{
+        opacity:1;
+        -moz-transform:translateY(0)}
+}
+@-o-keyframes fadeInDown{
+    0%{
+        opacity:0;
+        -o-transform:translateY(-20px)}
+    100%{
+        opacity:1;
+        -o-transform:translateY(0)}
+}
+@keyframes fadeInDown{
+    0%{
+        opacity:0;
+        transform:translateY(-20px)}
+    100%{
+        opacity:1;
+        transform:translateY(0)}
+}
+.fadeInDown{
+    -webkit-animation-delay:0.3s;
+    -moz-animation-delay:0.3s;
+    -o-animation-delay:0.3s;
+    animation-delay:0.3s;
+    -webkit-animation-name:fadeInDown;
+    -moz-animation-name:fadeInDown;
+    -o-animation-name:fadeInDown;
+    animation-name:fadeInDown
+}
+
+@-webkit-keyframes bounceInUp{
+    0%{
+        opacity:0;
+        -webkit-transform:translateY(40px)}
+    60%{
+        opacity:1;
+        -webkit-transform:translateY(-5px)}
+    80%{
+        -webkit-transform:translateY(5px)}
+    100%{
+        -webkit-transform:translateY(0)}
+}
+/* ************ */
+
+#detailDiv{
+    padding:10px;
+}
+
+/* *********************** spinner ************************************ */
+#spinner{
+    position: fixed;
+    z-index: 22;
+    width:100%;
+}
+#floatingBarsG{
+    position:relative;
+    margin:0px auto;
+    width:21px;
+    height:26px
+}
+
+.blockG{
+position:absolute;
+background-color:#FFFFFF;
+width:3px;
+height:8px;
+-moz-border-radius:3px 3px 0 0;
+-moz-transform:scale(0.4);
+-moz-animation-name:fadeG;
+-moz-animation-duration:0.48s;
+-moz-animation-iteration-count:infinite;
+-moz-animation-direction:linear;
+-webkit-border-radius:3px 3px 0 0;
+-webkit-transform:scale(0.4);
+-webkit-animation-name:fadeG;
+-webkit-animation-duration:0.48s;
+-webkit-animation-iteration-count:infinite;
+-webkit-animation-direction:linear;
+-ms-border-radius:3px 3px 0 0;
+-ms-transform:scale(0.4);
+-ms-animation-name:fadeG;
+-ms-animation-duration:0.48s;
+-ms-animation-iteration-count:infinite;
+-ms-animation-direction:linear;
+-o-border-radius:3px 3px 0 0;
+-o-transform:scale(0.4);
+-o-animation-name:fadeG;
+-o-animation-duration:0.48s;
+-o-animation-iteration-count:infinite;
+-o-animation-direction:linear;
+border-radius:3px 3px 0 0;
+transform:scale(0.4);
+animation-name:fadeG;
+animation-duration:0.48s;
+animation-iteration-count:infinite;
+animation-direction:linear;
+}
+#rotateG_01{
+left:0;
+top:9px;
+-moz-animation-delay:0.18s;
+-moz-transform:rotate(-90deg);
+-webkit-animation-delay:0.18s;
+-webkit-transform:rotate(-90deg);
+-ms-animation-delay:0.18s;
+-ms-transform:rotate(-90deg);
+-o-animation-delay:0.18s;
+-o-transform:rotate(-90deg);
+animation-delay:0.18s;
+transform:rotate(-90deg);
+}
+#rotateG_02{
+left:3px;
+top:3px;
+-moz-animation-delay:0.24s;
+-moz-transform:rotate(-45deg);
+-webkit-animation-delay:0.24s;
+-webkit-transform:rotate(-45deg);
+-ms-animation-delay:0.24s;
+-ms-transform:rotate(-45deg);
+-o-animation-delay:0.24s;
+-o-transform:rotate(-45deg);
+animation-delay:0.24s;
+transform:rotate(-45deg);
+}
+#rotateG_03{
+left:9px;
+top:1px;
+-moz-animation-delay:0.3s;
+-moz-transform:rotate(0deg);
+-webkit-animation-delay:0.3s;
+-webkit-transform:rotate(0deg);
+-ms-animation-delay:0.3s;
+-ms-transform:rotate(0deg);
+-o-animation-delay:0.3s;
+-o-transform:rotate(0deg);
+animation-delay:0.3s;
+transform:rotate(0deg);
+}
+#rotateG_04{
+right:3px;
+top:3px;
+-moz-animation-delay:0.36s;
+-moz-transform:rotate(45deg);
+-webkit-animation-delay:0.36s;
+-webkit-transform:rotate(45deg);
+-ms-animation-delay:0.36s;
+-ms-transform:rotate(45deg);
+-o-animation-delay:0.36s;
+-o-transform:rotate(45deg);
+animation-delay:0.36s;
+transform:rotate(45deg);
+}
+#rotateG_05{
+right:0;
+top:9px;
+-moz-animation-delay:0.42000000000000004s;
+-moz-transform:rotate(90deg);
+-webkit-animation-delay:0.42000000000000004s;
+-webkit-transform:rotate(90deg);
+-ms-animation-delay:0.42000000000000004s;
+-ms-transform:rotate(90deg);
+-o-animation-delay:0.42000000000000004s;
+-o-transform:rotate(90deg);
+animation-delay:0.42000000000000004s;
+transform:rotate(90deg);
+}
+#rotateG_06{
+right:3px;
+bottom:2px;
+-moz-animation-delay:0.48s;
+-moz-transform:rotate(135deg);
+-webkit-animation-delay:0.48s;
+-webkit-transform:rotate(135deg);
+-ms-animation-delay:0.48s;
+-ms-transform:rotate(135deg);
+-o-animation-delay:0.48s;
+-o-transform:rotate(135deg);
+animation-delay:0.48s;
+transform:rotate(135deg);
+}
+#rotateG_07{
+bottom:0;
+left:9px;
+-moz-animation-delay:0.5399999999999999s;
+-moz-transform:rotate(180deg);
+-webkit-animation-delay:0.5399999999999999s;
+-webkit-transform:rotate(180deg);
+-ms-animation-delay:0.5399999999999999s;
+-ms-transform:rotate(180deg);
+-o-animation-delay:0.5399999999999999s;
+-o-transform:rotate(180deg);
+animation-delay:0.5399999999999999s;
+transform:rotate(180deg);
+}
+#rotateG_08{
+left:3px;
+bottom:2px;
+-moz-animation-delay:0.6s;
+-moz-transform:rotate(-135deg);
+-webkit-animation-delay:0.6s;
+-webkit-transform:rotate(-135deg);
+-ms-animation-delay:0.6s;
+-ms-transform:rotate(-135deg);
+-o-animation-delay:0.6s;
+-o-transform:rotate(-135deg);
+animation-delay:0.6s;
+transform:rotate(-135deg);
+}
+@-moz-keyframes fadeG{
+0%{
+background-color:#000000}
+100%{
+background-color:#FFFFFF}
+}
+@-webkit-keyframes fadeG{
+0%{
+background-color:#000000}
+100%{
+background-color:#FFFFFF}
+}
+@-ms-keyframes fadeG{
+0%{
+background-color:#000000}
+100%{
+background-color:#FFFFFF}
+}
+@-o-keyframes fadeG{
+0%{
+background-color:#000000}
+100%{
+background-color:#FFFFFF}
+}
+@keyframes fadeG{
+0%{
+background-color:#000000}
+100%{
+background-color:#FFFFFF}
+}
