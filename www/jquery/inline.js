@@ -71,7 +71,6 @@ jq( document ).on( 'pageinit', '#newOeeLogPage' ,function(event){
 	
 		if(equipment !="" && sft !="" && prdLead !="" && prdDate !==""){
 			jq.mobile.changePage( "#oeeLogPage", { transition: "slide"});
-			refreshOeeLogTable(selectedWorkCenterId, selectedEquipmentId, prdDate);
 		} else{
 			jq("#spError").html("Error exists in the item(s) marked in red").css("color","#990033");
 		}
