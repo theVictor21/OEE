@@ -25,11 +25,11 @@ jq( document ).on( 'pageinit', '#newOeeLogPage' ,function(event){
 	
 	jq("#equipmentInput").change(function(){
 		equipment = jq("#equipmentInput").val();  
-		//jq("#prdLeadTxt").text(prdLead);
+		jq("#eqpNameTxt").text(equipment);
 	});
 	jq("#shiftInput").change(function(){
 		sft = jq("#shiftInput").val();  
-		//jq("#prdLeadTxt").text(prdLead);
+		jq("#shiftTxt").text(sft);
 	});
 	jq("#prdLeadInput").change(function(){
 		prdLead = jq("#prdLeadInput").val();  

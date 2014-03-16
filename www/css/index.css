@@ -60,7 +60,7 @@ table{
 	color:#FFF;
 	padding:20px;
 }
-@media ( min-width: 40em ) {
+@media ( min-width: 75em ) {
 	.headerTitle td,
 	.headerTitle th,
 	.headerTitle tbody th,
@@ -112,7 +112,7 @@ table{
 	padding:20px;
 }
 
-@media ( min-width: 40em ) {
+@media ( min-width: 75em ) {
 	#scoreboard td,
 	#scoreboard th,
 	#scoreboard tbody th,
@@ -185,7 +185,7 @@ table{
         white-space: nowrap;
     }
 }
-@media ( min-width: 40em ) {
+@media ( min-width: 75em ) {
 	#scoreboardDl td,
 	#scoreboardDl th,
 	#scoreboardDl tbody th,
@@ -250,7 +250,7 @@ table{
 #btnheader{
      background-color:#206ba4;
 }
-@media ( min-width: 40em ) {
+@media ( min-width: 75em ) {
 	/* Show the table header rows and set all cells to display: table-cell */ 
 	.logHeader td,
 	.logHeader th,
@@ -332,7 +332,7 @@ table{
     display: inline-block;
     margin: -.4em 1em -.4em -.1em;
 }
-@media ( min-width: 43em ) {
+@media ( min-width: 75em ) {
 	/* Show the table header rows and set all cells to display: table-cell */ 
 	.logDetail td,
 	.logDetail th,
@@ -384,7 +384,7 @@ table{
 #oeeDtQltLogTable tbody .tdBtn{
     background-color:#206ba4;
 }
-@media ( min-width: 43em ) {
+@media ( min-width: 75em ) {
     #oeeDtQltLogTable th,
     #oeeDtQltLogTable thead th{
         background-color:#fff;
@@ -470,7 +470,7 @@ table{
     overflow:hidden;
     text-overflow:ellipsis;
 }
-@media ( min-width: 40em ) {
+@media ( min-width: 75em ) {
 	/* Show the table header rows and set all cells to display: table-cell */ 
 	#oeeLogValidation td,
 	#oeeLogValidation th,
@@ -623,7 +623,7 @@ table{
 #targetTbl{margin-bottom:10px}
 #notTbl{margin-bottom:10px}
 #infoTable{margin-bottom:10px}
-@media ( min-width: 40em ) {
+@media ( min-width: 75em ) {
     .fiveCol tbody td{width:20%}
     .sixCol tbody td{width:16%;}
     #targetTbl{margin-bottom:-3px}
@@ -691,7 +691,7 @@ table{
         display:none;
     }
 }
-@media ( min-width: 40em ){
+@media ( min-width: 75em ){
     .mobileSection{
         display:none;
     }
