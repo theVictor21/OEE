@@ -77,7 +77,16 @@ jq( document ).on( 'pageinit', '#newOeeLogPage' ,function(event){
 	}); //end nextBtn
 	
 	
-	
+	//ADD A LOG
+  	jq("#oeeFormAddALogBtn").click(function(){
+         //REMOVE ERROR AT FIRST SHOWING
+        jq("#oeeFormPage").on( 'pageshow',function(event){
+            jq("#updateOeeFormBtn[type='button']").button('disable').button("refresh");
+            jq("#saveOeeFormBtn[type='button']").button('enable').button("refresh");
+        });
+        jq.mobile.changePage( "#oeeFormPage", { transition: "pop", role: "dialog" });
+        clearOeeFormPage();
+  	});  //end oeeFormAddALogBtn
 	
 	
 	

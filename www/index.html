@@ -1,28 +1,12 @@
 <!DOCTYPE html>
-<!--
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
 
-    http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
--->
 <html>
         <head>
         <meta charset="utf-8" />
         <meta name="format-detection" content="telephone=no" />
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <!--meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" /-->
+
         <link rel="stylesheet" type="text/css" href="css/index.css" />
         <script src="jquery/jquery-1.11.0.min.js"></script>
         <link rel="stylesheet" href="jquery/jquery.mobile-1.4.2.min.css" />
@@ -33,58 +17,55 @@
             function onLoad() {
                 document.addEventListener("deviceready", onDeviceReady, false);
             }
-        function onDeviceReady() {
-            // Now safe to use device APIs
-            init();
-            //alert("Alert deviceready");
-            console.log(" console deviceready");
-        }
+			function onDeviceReady() {
+				// Now safe to use device APIs
+				init();
+				//alert("Alert deviceready");
+				console.log(" console deviceready");
+			}
 
 
         </script>
         <title>OEE</title>
         </head>
 
-        <body onload="onLoad()">
-<!-- ************* newOeeLogPage ************* -->
-<div data-role="page" data-rel="dialog" id="newOeeLogPage" data-theme="a" data-close-btn="none">
-          <div data-role="header" data-theme="a" class="ui-corner-top">
-    <h1>New OEE Log</h1>
-  </div>
-          <div data-role="content" data-theme="a" class="ui-corner-bottom ui-content">
-    <div data-role='fieldcontain'>
-              <label for='equipmentInput'>Equipment:<span id="err1" style="color:#990033; display:none"> !Required</span></label>
-              <input type='text' id='equipmentInput' name='equipmentInput'/>
+<body onload="onLoad()">
+	<div data-role="page" data-rel="dialog" id="newOeeLogPage" data-theme="a" data-close-btn="none">
+        <div data-role="header" data-theme="a" class="ui-corner-top">
+    		<h1>New OEE Log</h1>
+  		</div>
+        <div data-role="content" data-theme="a" class="ui-corner-bottom ui-content">
+    		<div data-role='fieldcontain'>
+            	<label for='equipmentInput'>Equipment:<span id="err1" style="color:#990033; display:none"> !Required</span></label>
+            	<input type='text' id='equipmentInput' name='equipmentInput'/>
             </div>
-    <div data-role='fieldcontain'>
-              <label for='shiftInput'>Shift:<span id="err2" style="color:#990033; display:none"> !Required</span></label>
-              <input type='text' id='shiftInput' name='shiftInput'/>
+    		<div data-role='fieldcontain'>
+            	<label for='shiftInput'>Shift:<span id="err2" style="color:#990033; display:none"> !Required</span></label>
+              	<input type='text' id='shiftInput' name='shiftInput'/>
             </div>
-    <div data-role='fieldcontain'>
-              <label for='prdLeadInput'>Production Lead:<span id="err3" style="color:#990033; display:none"> !Required</span></label>
-              <input type='text' id='prdLeadInput' name='prdLeadInput'/>
+    		<div data-role='fieldcontain'>
+              	<label for='prdLeadInput'>Production Lead:<span id="err3" style="color:#990033; display:none"> !Required</span></label>
+              	<input type='text' id='prdLeadInput' name='prdLeadInput'/>
             </div>
-    <div data-role='fieldcontain'>
-              <label for='prdDateInput'>Production Date:<span id="err4" style="color:#990033; display:none"> !Required</span></label>
-              <input type='date' data-clear-btn='false' name='prdDateInput' id='prdDateInput' value=''/>
+    		<div data-role='fieldcontain'>
+              	<label for='prdDateInput'>Production Date:<span id="err4" style="color:#990033; display:none"> !Required</span></label>
+              	<input type='date' data-clear-btn='false' name='prdDateInput' id='prdDateInput' value=''/>
             </div>
-    <div data-role='fieldcontain'>
-              <label for='lbl'><span id="err5" style="color:#990033; display:none"> !Required</span></label>
-              <fieldset class="ui-grid-solo ui-responsive buttonSet" id='lbl'>
-        <div class="ui-block-a">
-                  <input type="button" id="nextBtn" value="Next"/>
-                </div>
-      </fieldset>
+    		<div data-role='fieldcontain'>
+              	<label for='lbl'><span id="err5" style="color:#990033; display:none"> !Required</span></label>
+              	<fieldset class="ui-grid-solo ui-responsive buttonSet" id='lbl'>
+        			<div class="ui-block-a">
+                	<input type="button" id="nextBtn" value="Next"/>
+            		</div>
+      			</fieldset>
             </div>
-    <div id='spError'></div>
-  </div>
-          <!-- /content --> 
+    		<div id='spError'></div>
+  		</div><!-- /content --> 
           
-        </div>
-<!-- /page --> 
+	</div><!-- /page --> 
 
-<!-- ************* oeeTargetPage ************* -->
-<div data-role="page" data-rel="dialog" id="oeeTargetPage" data-theme="a" data-close-btn="none">
+	<!-- ************* oeeTargetPage ************* -->
+	<div data-role="page" data-rel="dialog" id="oeeTargetPage" data-theme="a" data-close-btn="none">
           <div data-role="header" data-theme="a" class="ui-corner-top">
     <h1>OEE Target</h1>
   </div>
@@ -303,7 +284,7 @@
       </table>
               <table data-role="table" class="logHeader fiveCol" id="infoTable">
         <thead>
-                  <tr>
+                  <tr> 
             <!--th>Plant Name</th>
             <th>Work Center</th-->
             <th>Date</th>
@@ -312,7 +293,7 @@
           </tr>
                 </thead>
         <tbody>
-                  <tr>
+                  <tr> 
             <!--td><span class="fontSize" id="plantNameTxt"></span></td>
             <td><span class="fontSize" id="wcNameTxt"></span></td-->
             <td><span class="fontSize" id="prdDateTxt"></span></td>
@@ -328,7 +309,6 @@
     <div data-role="collapsible" data-content-theme="a">
               <h4>OEE Log</h4>
               <br/>
-              <!--a href="#oeeFormPage" id="oeeFormAddALogBtn" data-inline="true" data-role="button" data-theme="d" data-rel="dialog" data-transition="pop" >Add a Log</a-->
               
               <fieldset class="ui-grid-b ui-responsive buttonSet">
         <div class="ui-block-a">
@@ -397,19 +377,4 @@
 <script src="jquery/inline.js"></script> 
 <script src="jquery/heijunka.js"></script>
 </body>
-
-        <!--body>
-        <div class="app">
-            <h1>PhoneGap</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
-            </div>
-        </div>
-        <script type="text/javascript" src="phonegap.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-        <script type="text/javascript">
-            app.initialize();
-        </script>
-    </body-->
 </html>
